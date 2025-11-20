@@ -19,11 +19,13 @@ source ./.venv/bin/activate
 ## account.py 文件内容
 
 ```python
-username='xxxxxxxx'
-password='#yyyyyyy'
+account={
+    'username':'xxxxxx',
+    'password':'yyyyyy'
+}
 ```
 
-## 用python3生成这样格式的字符串2025-11-20 10:29:49s
+## 用 python3 生成这样格式的字符串 2025-11-20 10:29:49s
 
 ```python
 from datetime import datetime
@@ -63,7 +65,7 @@ let oe = {
 
 // sm2加密算法
 // https://jxgk.jxeea.cn/ksy/js/vendor.A_2TN0mi.js
-// t="#ydzxgk2026#_2025-11-20 10:29:49"s
+// t="#ydzxgk2026#_2025-11-20 10:29:49"
 // e="04d5982dcb21ad8bd5df69bc63984c2ae6550fcb2aae5cb1941afc76146a0570ea532fe1695e6103b888b2af4f7ad15b1c07a33a8ba8ad02205dc24b20ebb287f7"
 doEncrypt:function(t, e, r=1) {
         t = "string" == typeof t ? Wl.hexToArray(Wl.utf8ToHex(t)) : Array.prototype.slice.call(t),
