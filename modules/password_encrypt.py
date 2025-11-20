@@ -250,11 +250,11 @@ def password_encrypt(password):
     public_key="04d5982dcb21ad8bd5df69bc63984c2ae6550fcb2aae5cb1941afc76146a0570ea532fe1695e6103b888b2af4f7ad15b1c07a33a8ba8ad02205dc24b20ebb287f7"
     sm2 =CryptSM2(public_key=public_key, private_key="",mode=1)
     
-    print(f"原始数据: {original_data}")
+    # print(f"原始数据: {original_data}")
 
     # 3. 加密数据
     encrypted_data = sm2.encrypt(original_data.encode('utf8'))
-    print(f"加密后的数据: {encrypted_data}")
+    # print(f"加密后的数据: {encrypted_data}")
     return encrypted_data
 
 if __name__ == '__main__':

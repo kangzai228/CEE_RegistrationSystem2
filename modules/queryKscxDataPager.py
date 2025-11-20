@@ -52,5 +52,5 @@ def queryKscxDataPager(ticketNO,bmddm,bjdm):
     kshList = []
     for i in response.json()["data"]:
         kshList.append(i["ksh"])
-    print(len(response.json()["data"]))
+    print("{}班共有{}人".format(response.json()["data"][0]['bjmc'],len(response.json()["data"])))
     return kshList

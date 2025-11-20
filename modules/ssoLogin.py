@@ -29,5 +29,5 @@ def ssoLogin(username, password,code,captchaId):
     }
 
     response = requests.post('https://jxgk.jxeea.cn/bdss/system/api/sso/sso/ssoLogin.rest', headers=headers, data=data)
-    print(response.json()["data"])
+    # print(response.json()["data"])
     return response.json()["data"]["ticket"]["keyNO"]
