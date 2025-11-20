@@ -13,9 +13,9 @@ def auto(username, password):
     print(username,password)
     captchaData = captcha()
     captchaId, captchaImg = captchaData['captchaId'], captchaData['captcha']
-    print(captchaImg,captchaId)
+    # print(captchaImg,captchaId)
     image_base64=captchaImg.split(',')[1]
-    print(image_base64)
+    # print(image_base64)
     code=identification_code(image_base64)
     print(code)
     en_pwd=password_encrypt(password)
