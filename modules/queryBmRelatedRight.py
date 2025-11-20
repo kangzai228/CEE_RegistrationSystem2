@@ -33,4 +33,4 @@ def queryBmRelatedRight(ticketNO,ksbmxxbh):
         headers=headers,
         data=data,
     )
-    print(response.json())
+    print(response.json()["data"]['ksbmxx'])
