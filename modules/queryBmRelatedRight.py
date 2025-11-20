@@ -1,5 +1,7 @@
+# 查询一个学生的具体报名信息
 import requests
 
+# ksbmxxbh 考生号
 def queryBmRelatedRight(ticketNO,ksbmxxbh):
     headers = {
         'Accept': 'application/json, text/plain, */*',
