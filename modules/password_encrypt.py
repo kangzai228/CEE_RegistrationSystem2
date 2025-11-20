@@ -255,6 +255,7 @@ def password_encrypt(password):
     # 3. 加密数据
     encrypted_data = sm2.encrypt(original_data.encode('utf8'))
     print(f"加密后的数据: {encrypted_data}")
+    return encrypted_data
 
 if __name__ == '__main__':
     password="#ydzxgk2026#"
