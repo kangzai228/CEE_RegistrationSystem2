@@ -13,12 +13,6 @@ import xlrd,xlwt,os
 def addToXLS(file_path,oneRowData,rowNum):
     # 打开想要更改的excel文件
     excel_temp = xlrd.open_workbook(file_path, formatting_info=True)
-    # sheet1 = excel_temp.sheets()[0] # 打开第一张表
-    # nrows = sheet1.nrows #总行数
-    # ncols = sheet1.ncols #总列数
-    # print("总行数：",nrows)
-    # print("总列数：",ncols)
-    
     # 将操作文件对象拷贝，变成可写的workbook对象
     new_excel = copy(excel_temp)
     # 获得第一个sheet的对象
