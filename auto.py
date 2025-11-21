@@ -23,11 +23,11 @@ def auto(username, password):
     banjiList=queryBjxxList(ticketNO,username)
     for bjdm in banjiList:
         kshList=queryKscxDataPager(ticketNO,username,bjdm)
-        print(kshList)
-        for ksh in kshList:
-            queryBmRelatedRight(ticketNO,ksh)
-            break
-        break
+        # print(kshList)
+        # for ksh in kshList:
+        #     queryBmRelatedRight(ticketNO,ksh)
+        #     break
+        # break
 
 if __name__ == '__main__':
     username=account['username']
