@@ -1,3 +1,5 @@
+import os,xlwt,xlrd
+from modules.addToXLS import addToXLS
 from account import account
 
 from modules.captcha import captcha
@@ -22,7 +24,22 @@ def auto(username, password):
     ticketNO=ssoLogin(username, en_pwd,code,captchaId)
     banjiList=queryBjxxList(ticketNO,username)
     for bjdm in banjiList:
-        kshList=queryKscxDataPager(ticketNO,username,bjdm)
+        kshList,stuList=queryKscxDataPager(ticketNO,username,bjdm)
+        file_path="./stu_info.xls"
+        if not os.path.exists(file_path):
+            workbook = xlwt.Workbook(encoding='utf-8')
+            sheet = workbook.add_sheet('Sheet1')
+            workbook.save(file_path)
+
+        excel_temp = xlrd.open_workbook(file_path, formatting_info=True)
+        sheet1 = excel_temp.sheets()[0] # 打开第一张表
+        nrows = sheet1.nrows #总行数
+        print("总行数：",nrows)
+        i=0
+        for stu in stuList:
+            addToXLS(file_path,stu,nrows+i)
+            i+=1
+
         # print(kshList)
         # for ksh in kshList:
         #     queryBmRelatedRight(ticketNO,ksh)

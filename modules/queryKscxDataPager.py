@@ -1,6 +1,4 @@
 #查询一个班的所有学生考生号
-from modules.addToXLS import addToXLS
-
 import requests
 def queryKscxDataPager(ticketNO,bmddm,bjdm):
     headers = {
@@ -51,14 +49,14 @@ def queryKscxDataPager(ticketNO,bmddm,bjdm):
         data=data,
     )
     # print(response.json()["data"])
-    kshList = []
-    
+    stuList=[] #全部学生信息
+    kshList=[] # 全部学生的考生号
     for i in response.json()["data"]:
-        # print(i)
-        kshList.append(i["ksh"])
-        dataList=[]
+        print(i['xm'])
+        kshList.append(i['ksh'])
+        dataList=[] #一个学生的所有信息
         for key,value in i.items():
             dataList.append(value)
-        addToXLS("./stu_info.xls",dataList)
+        stuList.append(dataList)
     print("{}班共有{}人".format(response.json()["data"][0]['bjmc'],len(response.json()["data"])))
-    return kshList
+    return kshList,stuList
