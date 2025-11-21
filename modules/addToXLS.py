@@ -7,11 +7,11 @@
 
 # file_path:文件名(可以包括路径)
 # oneRowData:一行的数据
-# rowNum:行号
+
 from xlutils.copy import copy
 import xlrd,xlwt,os
-def addToXLS(file_path,oneRowData,rowNum):
-    if not os.exists(file_path):
+def addToXLS(file_path,oneRowData):
+    if not os.path.exists(file_path):
         workbook = xlwt.Workbook(encoding='utf-8')
         sheet = workbook.add_sheet('Sheet1')
         workbook.save(file_path)
@@ -22,14 +22,14 @@ def addToXLS(file_path,oneRowData,rowNum):
     nrows = sheet1.nrows #总行数
     ncols = sheet1.ncols #总列数
     print("总行数：",nrows)
-    print("总列数：",ncols)
+    # print("总列数：",ncols)
     # 将操作文件对象拷贝，变成可写的workbook对象
     new_excel = copy(excel_temp)
     # 获得第一个sheet的对象
     ws = new_excel.get_sheet(0)
     ncols=len(oneRowData)
     for col in range(ncols):
-        ws.write(rowNum, col, oneRowData[col]) #单元格A1开始，即(0,0)
+        ws.write(nrows, col, oneRowData[col]) #单元格A1开始，即(0,0)
         # break
     # 另存为excel文件，并将文件命名，可以重新命名，应该也可以覆盖掉
     new_excel.save(file_path)
