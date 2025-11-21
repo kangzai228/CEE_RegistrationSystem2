@@ -16,6 +16,12 @@ source ./.venv/bin/activate
 .venv\Scripts\activate.bat
 ```
 
+## python3.8.10 AMD_X64
+
+## 第三方库
+
+requirements.txt
+
 ## account.py 文件内容
 
 ```python
